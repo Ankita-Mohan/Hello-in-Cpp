@@ -3,13 +3,13 @@
 using namespace std;
 int Prime(int num)
 {
-    int count, inum, prime = 1;
+    int i, inum, prime = 1;
 
     inum = sqrt(num);
 
-    for (count = 2; count <= inum; count++)
+    for (i = 2; i <= inum; i++)
     {
-        if (num % count == 0)
+        if (num % i == 0)
         {
             prime = 0;
             break;
@@ -29,18 +29,18 @@ int nextPrime(int num)
 }
 int main()
 {
-    int num, count, flag = 0;
+    int num, i, flag = 0;
 
     cout << "Enter a positive integer: ";
     cin >> num;
 
-    for (count = 2; count <= (num - count); count = nextPrime(count))
+    for (i = 2; i <= (num - i); i = nextPrime(i))
     {
-        if (Prime(num - count))
+        if (Prime(num - i))
         {
             flag = 1;
             cout << endl
-                 << count << "+" << num - count << "= " << num;
+                 << i << "+" << num - i << "= " << num;
         }
     }
 
